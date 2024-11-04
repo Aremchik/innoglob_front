@@ -99,9 +99,7 @@ export const ChatBot: React.FC = () => {
                     : "bg-gray-200 text-black self-start"
                 }`}
               >
-                {msg.text.split("\n").map((line, index) => (
-                  <p key={index}>{line}</p>
-                ))}
+                {msg.text} {/* Отображаем текст без разделения на строки */}
               </div>
             ))}
           </div>
