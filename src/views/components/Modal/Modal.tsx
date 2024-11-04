@@ -18,7 +18,7 @@ export const Modal: React.FC<ModalProps> = ({
         return (
           <>
             <h2 className="text-2xl font-bold mb-4 text-center">
-              Bar Chart - Detailed View
+              Столбчатая диаграмма - Подробный просмотр
             </h2>
             <div className="flex justify-center w-full h-96">
               <Bar
@@ -27,7 +27,7 @@ export const Modal: React.FC<ModalProps> = ({
               />
             </div>
             <p className="mt-4 text-base text-center">
-              Additional insights and analysis on the bar chart data...
+              Дополнительные сведения и анализ данных столбчатой диаграммы...
             </p>
           </>
         );
@@ -35,30 +35,30 @@ export const Modal: React.FC<ModalProps> = ({
         return (
           <>
             <h2 className="text-2xl font-bold mb-4 text-center">
-              Data Table - Detailed View
+              Таблица данных - Подробный просмотр
             </h2>
             <div className="overflow-auto max-h-80 w-full">
               <table className="w-full text-left text-sm">
                 <thead>
                   <tr>
-                    <th className="border px-4 py-2">Column 1</th>
-                    <th className="border px-4 py-2">Column 2</th>
+                    <th className="border px-4 py-2">Столбец 1</th>
+                    <th className="border px-4 py-2">Столбец 2</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border px-4 py-2">Data 1</td>
-                    <td className="border px-4 py-2">Data 2</td>
+                    <td className="border px-4 py-2">Данные 1</td>
+                    <td className="border px-4 py-2">Данные 2</td>
                   </tr>
                   <tr>
-                    <td className="border px-4 py-2">Data 3</td>
-                    <td className="border px-4 py-2">Data 4</td>
+                    <td className="border px-4 py-2">Данные 3</td>
+                    <td className="border px-4 py-2">Данные 4</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <p className="mt-4 text-base text-center">
-              More information and analysis about the table data...
+              Более подробная информация и анализ данных таблицы...
             </p>
           </>
         );
@@ -66,7 +66,7 @@ export const Modal: React.FC<ModalProps> = ({
         return (
           <>
             <h2 className="text-2xl font-bold mb-4 text-center">
-              Pie Chart - Detailed View
+              Круговая диаграмма - Подробный просмотр
             </h2>
             <div className="flex justify-center w-full h-96">
               <Pie
@@ -75,7 +75,7 @@ export const Modal: React.FC<ModalProps> = ({
               />
             </div>
             <p className="mt-4 text-base text-center">
-              Additional insights and analysis on the pie chart data...
+              Дополнительные сведения и анализ данных круговой диаграммы...
             </p>
           </>
         );
@@ -83,7 +83,7 @@ export const Modal: React.FC<ModalProps> = ({
         return (
           <>
             <h2 className="text-2xl font-bold mb-4 text-center">
-              Line Chart - Detailed View
+              Линейная диаграмма - Подробный просмотр
             </h2>
             <div className="flex justify-center w-full h-96">
               <Line
@@ -92,7 +92,7 @@ export const Modal: React.FC<ModalProps> = ({
               />
             </div>
             <p className="mt-4 text-base text-center">
-              Further analysis on trends in the line chart data...
+              Дальнейший анализ тенденций в данных линейной диаграммы...
             </p>
           </>
         );
