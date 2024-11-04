@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { FaRegMessage } from "react-icons/fa6";
 import { RxCross1 } from "react-icons/rx";
 
@@ -24,7 +25,7 @@ export const ChatBot: React.FC = () => {
     localStorage.setItem("chatMessages", JSON.stringify(messages));
   }, [messages]);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (inputValue.trim() === "") return;
 
     const newMessage: Message = {
@@ -35,19 +36,31 @@ export const ChatBot: React.FC = () => {
     setMessages((prevMessages) => [...prevMessages, newMessage]);
     setInputValue("");
 
-    const botResponse: Message = {
-      id: Date.now() + 1,
-      text: "This is a placeholder response from the bot.",
-      fromUser: false,
-    };
-    setTimeout(() => {
+    try {
+      const response = await axios.post("http://localhost:8080/api/chat", {
+        text: inputValue,
+      });
+
+      const botResponse: Message = {
+        id: Date.now() + 1,
+        text: response.data.text,
+        fromUser: false,
+      };
+
       setMessages((prevMessages) => [...prevMessages, botResponse]);
-    }, 1000);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      const errorMessage: Message = {
+        id: Date.now() + 1,
+        text: "Error: Could not get response from the server.",
+        fromUser: false,
+      };
+      setMessages((prevMessages) => [...prevMessages, errorMessage]);
+    }
   };
 
   return (
     <div className="fixed bottom-6 right-4 z-50">
-      {/* Chat Button */}
       {!isOpen && (
         <button
           className="w-14 h-14 rounded-full bg-gray-700 text-white flex items-center justify-center shadow-lg"

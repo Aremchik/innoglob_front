@@ -72,7 +72,7 @@ export const Dashboard: React.FC = () => {
         className="bg-white rounded-lg p-7 shadow-md cursor-pointer max-h-72 overflow-hidden"
         onClick={() => openModal("bar")}
       >
-        <h2 className="text-lg font-bold">Bar Chart</h2>
+        <h2 className="text-lg font-bold">Столбчатая диаграмма</h2>
         <Bar data={chartData.bar} options={{ maintainAspectRatio: false }} />
       </div>
 
@@ -80,7 +80,7 @@ export const Dashboard: React.FC = () => {
         className="bg-white rounded-lg p-4 shadow-md cursor-pointer max-h-72 overflow-hidden"
         onClick={() => openModal("table")}
       >
-        <h2 className="text-lg font-bold">Data Table</h2>
+        <h2 className="text-lg font-bold">Таблица</h2>
         <table className="w-full text-left text-sm">
           <thead>
             <tr>
@@ -101,7 +101,7 @@ export const Dashboard: React.FC = () => {
         className="bg-white rounded-lg p-7 shadow-md cursor-pointer max-h-72 overflow-hidden"
         onClick={() => openModal("pie")}
       >
-        <h2 className="text-lg font-bold">Pie Chart</h2>
+        <h2 className="text-lg font-bold">Круговой график</h2>
         <Pie
           data={chartData.pie}
           options={{ maintainAspectRatio: false }}
@@ -113,7 +113,7 @@ export const Dashboard: React.FC = () => {
         className="bg-white rounded-lg p-7 shadow-md cursor-pointer max-h-72 overflow-hidden"
         onClick={() => openModal("line")}
       >
-        <h2 className="text-lg font-bold">Line Chart</h2>
+        <h2 className="text-lg font-bold">Линейный график</h2>
         <Line
           data={chartData.line}
           options={{ maintainAspectRatio: false }}
