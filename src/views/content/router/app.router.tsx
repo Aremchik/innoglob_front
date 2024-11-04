@@ -18,7 +18,7 @@ export const appRoutesDefinition: RouteObject[] = [
       },
       {
         path: "/",
-        element: <Navigate to="/main" replace={true} />,
+        element: <Navigate to="/dashboard" replace={true} />,
       },
       {
         path: "/main",

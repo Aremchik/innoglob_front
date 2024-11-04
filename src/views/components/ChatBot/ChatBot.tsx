@@ -37,13 +37,18 @@ export const ChatBot: React.FC = () => {
     setInputValue("");
 
     try {
-      const response = await axios.post("http://localhost:8080/api/chat", {
-        text: inputValue,
-      });
+      const response = await axios.post(
+        "http://localhost:8000/api/v1/rag/send_rag_request",
+        {
+          text: inputValue,
+        }
+      );
+
+      const botResponseText = response.data.llama_response;
 
       const botResponse: Message = {
         id: Date.now() + 1,
-        text: response.data.text,
+        text: botResponseText,
         fromUser: false,
       };
 
@@ -94,7 +99,9 @@ export const ChatBot: React.FC = () => {
                     : "bg-gray-200 text-black self-start"
                 }`}
               >
-                {msg.text}
+                {msg.text.split("\n").map((line, index) => (
+                  <p key={index}>{line}</p>
+                ))}
               </div>
             ))}
           </div>

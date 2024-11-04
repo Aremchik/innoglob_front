@@ -50,9 +50,6 @@ export const Header = () => {
         )}
       </div>
       <div className="flex space-x-4">
-        <button className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-800">
-          Описание
-        </button>
         <button
           className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-800"
           onClick={() => navigate("/dashboard")}
